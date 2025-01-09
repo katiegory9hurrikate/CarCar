@@ -18,21 +18,21 @@ This project was initially called "CarCar" and was a class assignment. The origi
 </tr>
 <tr>
 <td>
-- [ ] Customer List
-- [ ] Salesperson List
-- [ ] Salesperson History
-- [ ] Service History
-- [ ] Appointments List
-- [ ] Technician List
-- [ ] Sales History
+Customer List
+<br/>Salesperson List
+<br/>Salesperson History
+<br/>Service History
+<br/>Appointments List
+<br/>Technician List
+<br/>Sales History
 </td>
 <td>
-- [ ] Customer List
-- [ ] Salesperson List
-- [ ] Appointments List
-- [ ] Technician List
-- [ ] Manufacturer List
-- [ ] Model List
+Customer List
+<br/>Salesperson List
+<br/>Appointments List
+<br/>Technician List
+<br/>Manufacturer List
+<br/>Model List
 </td>
 </tr>
 </table>
@@ -44,22 +44,22 @@ This project was initially called "CarCar" and was a class assignment. The origi
 </tr>
 <tr>
 <td>
-- [ ] Inventory List
-- [ ] Customer List
-- [ ] Appointment List
-- [ ] Technician List
-- [ ] Salesperson List
-- [ ] Sales History
+<br/>Inventory List
+<br/>Customer List
+<br/>Appointment List
+<br/>Technician List
+<br/>Salesperson List
+<br/>Sales History
 </td>
 <td>
-- [ ] Inventory items
-- [ ] Customers
-- [ ] Salespeople
-- [ ] Technicians
-- [ ] Sales History
-- [ ] Appointments
-- [ ] Models
-- [ ] Manufacturers
+<br/>Inventory items
+<br/>Customers
+<br/>Salespeople
+<br/>Technicians
+<br/>Sales History
+<br/>Appointments
+<br/>Models
+<br/>Manufacturers
 </td>
 </tr>
 </table>
