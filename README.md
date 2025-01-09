@@ -1,14 +1,23 @@
-# CarCar
+# AutoPilot
+
+## Team as of October 2024:
+* Katie
 
 ## Team as of September 2024:
 * Micah - Service
 * Katie - Sales
 
-## Team as of October 2024:
-* Katie
+This project was initially called "CarCar" and was a class assignment. The original finished project can be found [here](https://gitlab.com/katiegory9hurrikate/project-beta)
 
 ## Pending updates:
-#### Add/Update search/filter fields on
+
+<table>
+<tr>
+<th>Add/Update search/filter fields</th>
+<th>Add "Create New" forms</th>
+</tr>
+<tr>
+<td>
 - [ ] Customer List
 - [ ] Salesperson List
 - [ ] Salesperson History
@@ -16,21 +25,33 @@
 - [ ] Appointments List
 - [ ] Technician List
 - [ ] Sales History
-#### Add "Create New" forms to
+</td>
+<td>
 - [ ] Customer List
 - [ ] Salesperson List
 - [ ] Appointments List
 - [ ] Technician List
 - [ ] Manufacturer List
 - [ ] Model List
-#### Add CSV bulk upload to
+</td>
+</tr>
+</table>
+
+<table>
+<tr>
+<th>Add CSV bulk upload</th>
+<th>Add "Edit" & "Delete" options</th>
+</tr>
+<tr>
+<td>
 - [ ] Inventory List
 - [ ] Customer List
 - [ ] Appointment List
 - [ ] Technician List
 - [ ] Salesperson List
 - [ ] Sales History
-#### Add "Edit" & "Delete" options to
+</td>
+<td>
 - [ ] Inventory items
 - [ ] Customers
 - [ ] Salespeople
@@ -39,6 +60,9 @@
 - [ ] Appointments
 - [ ] Models
 - [ ] Manufacturers
+</td>
+</tr>
+</table>
 
 #### Other
 - [ ] Add local state filters for color groups on inventory list - this will allow vehicles to be listed with their trademarked colors but still show up in searches based on the primary color group. Ex. "Plum Crazy Purple" would show up when a user selects "Purple" as a color filter and "Pink Pizzaz" would show up when a user selects "red" as the color group filter.
