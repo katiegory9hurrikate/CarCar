@@ -5,7 +5,7 @@
 * Katie - Sales
 
 ## Frontend Team:
-* Katie (everthing after 09/13/2024)
+* Katie (everything after 09/13/2024)
 
 ## How to Run this App
 
@@ -22,7 +22,7 @@
 - [ ] Copy the HTTP link for the forked respository from __your__ GitLab profile.
 - [ ] In your terminal/command prompt on your desktop cd into the directory you want to run the project from.
 - [ ] Once in the desired directory, clone the project to your computer using the `git clone` command.
-- [ ] Once cloned, cd into the project-beta directory and run the followiing commands:
+- [ ] Once cloned, cd into the project-beta directory and run the following commands:
     * `docker volume create beta-data`
     * `docker compose build`
     * `docker compose up`
