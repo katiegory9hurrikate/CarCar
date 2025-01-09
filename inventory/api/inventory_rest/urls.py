@@ -16,7 +16,7 @@ urlpatterns = [
         name="api_automobiles",
     ),
     path(
-        "automobiles/<str:vin>/",
+        "automobiles/<int:pk>/",
         api_automobile,
         name="api_automobile",
     ),

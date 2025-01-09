@@ -3,7 +3,6 @@ import { useState, useEffect } from "react";
 function AutomobileForm() {
   const [models, setModels] = useState([]);
   const [manufacturers, setManufacturers] = useState([]);
-  const [filteredModels, setFilteredModels] = useState([]);
   const [modelSearchTerm, setModelSearchTerm] = useState('');
   const [manufacturerSearchTerm, setManufacturerSearchTerm] = useState('');
   const [selectedModel, setSelectedModel] = useState(null);
@@ -87,14 +86,15 @@ function AutomobileForm() {
       setShowModelDropdown(true);
       setIsAddingModel(false);
     } else {
-      // Filter models while maintaining manufacturer grouping
       const filtered = {};
       Object.entries(groupedModels).forEach(([manufacturer, modelList]) => {
         const filteredModels = modelList.filter(model =>
           model.name.toLowerCase().includes(value.toLowerCase())
         );
-        if (filteredModels.length > 0) {
-          filtered[manufacturer] = filteredModels;
+
+        // Show models for the manufacturer as well
+        if (manufacturer.toLowerCase().includes(value.toLowerCase()) || filteredModels.length > 0) {
+          filtered[manufacturer] = filteredModels.length > 0 ? filteredModels : modelList;
         }
       });
       setFilteredGroupedModels(filtered);
@@ -127,13 +127,11 @@ function AutomobileForm() {
   const handleAddNewModel = () => {
     setIsAddingModel(true);
     setShowModelDropdown(false);
-    setModelSearchTerm('');
   };
 
   const handleAddNewManufacturer = () => {
     setIsAddingManufacturer(true);
     setShowManufacturerDropdown(false);
-    setManufacturerSearchTerm('');
   };
 
   const createNewManufacturer = async () => {

@@ -39,10 +39,10 @@ def api_automobiles(request):
 
 
 @require_http_methods(["DELETE", "GET", "PUT"])
-def api_automobile(request, vin):
+def api_automobile(request, pk):
     if request.method == "GET":
         try:
-            auto = Automobile.objects.get(vin=vin)
+            auto = Automobile.objects.get(id=pk)
             return JsonResponse(
                 auto,
                 encoder=AutomobileEncoder,
@@ -54,7 +54,7 @@ def api_automobile(request, vin):
             return response
     elif request.method == "DELETE":
         try:
-            auto = Automobile.objects.get(vin=vin)
+            auto = Automobile.objects.get(id=pk)
             auto.delete()
             return JsonResponse(
                 auto,
@@ -66,7 +66,7 @@ def api_automobile(request, vin):
     else: # PUT
         try:
             content = json.loads(request.body)
-            auto = Automobile.objects.get(vin=vin)
+            auto = Automobile.objects.get(id=pk)
 
             props = ["picture_url", "color", "year", "sold"]
             for prop in props:
