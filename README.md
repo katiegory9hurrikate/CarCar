@@ -21,7 +21,7 @@ This project was initially called "CarCar" and was a class assignment. The origi
 <tr>
 <td>
 Customer List
-Salesperson List
+<br/>Salesperson List
 <br/>Salesperson History
 <br/>Service History
 <br/>Appointments List
