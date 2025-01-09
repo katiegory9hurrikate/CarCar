@@ -1,8 +1,11 @@
 # CarCar
 
-## Team:
+## Backend Team:
 * Micah - Service
 * Katie - Sales
+
+## Frontend Team:
+* Katie (everthing after 09/13/2024)
 
 ## How to Run this App
 
@@ -15,16 +18,17 @@
 
 #### Setup:
 
-- [ ] Fork Git repository at https://gitlab.com/katiegory9hurrikate/project-beta into your GitLab account.
+- [ ] Fork Git repository at https://github.com/katiegory9hurrikate/CarCar into your GitHub account.
 - [ ] Copy the HTTP link for the forked respository from __your__ GitLab profile.
 - [ ] In your terminal/command prompt on your desktop cd into the directory you want to run the project from.
 - [ ] Once in the desired directory, clone the project to your computer using the `git clone` command.
 - [ ] Once cloned, cd into the project-beta directory and run the followiing commands:
     * `docker volume create beta-data`
-    * `docker-compose build`
-    * `docker-compose up`
+    * `docker compose build`
+    * `docker compose up`
     * `code .`
 - [ ] Familiarize yourself with the code. Use Insomnia (or similar) to test APIs. To view and test the front-end, navigate to http://localhost:5173/ using a web browser.
+(note: if the docker build doesn't work for some reason, close it down, delete/prune the containers, images, and volumes and try again. The ole turn it off and back on again trick is still relevant.)
 
 
 ## Diagram
@@ -279,7 +283,7 @@ Use http://localhost:5173/ to view any adjustments made to the files on the fron
         <td>List all appointments</td>
     </tr>
     <tr>
-        <td>http://localhost:8080/api/appointments/<</td>
+        <td>http://localhost:8080/api/appointments/</td>
         <td>POST</td>
         <td>Create new appointment</td>
     </tr>

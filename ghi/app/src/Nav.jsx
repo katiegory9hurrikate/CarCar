@@ -27,13 +27,11 @@ function Nav() {
               <NavLink className="nav-link dropdown-toggle" to="/inventory">Inventory</NavLink>
               {activeDropdown === 'inventory' && (
                 <ul className="dropdown-menu show">
-                  <li><NavLink className="dropdown-item" to="/inventory">All Automobiles</NavLink></li>
-                  <li><NavLink className="dropdown-item" to="/inventory/new">Add Automobile</NavLink></li>
+                  <li><NavLink className="dropdown-item" to="/inventory">All Inventory</NavLink></li>
+                  <li><NavLink className="dropdown-item" to="/inventory/new">Add Inventory</NavLink></li>
                   <li><hr className="dropdown-divider" /></li>
                   <li><NavLink className="dropdown-item" to="/manufacturers">All Manufacturers</NavLink></li>
-                  <li><NavLink className="dropdown-item" to="/manufacturers/new">Create a Manufacturer</NavLink></li>
                   <li><NavLink className="dropdown-item" to="/models">All Models</NavLink></li>
-                  <li><NavLink className="dropdown-item" to="/models/new">Create a Model</NavLink></li>
                 </ul>
               )}
             </li>
