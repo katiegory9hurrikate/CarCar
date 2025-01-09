@@ -27,7 +27,6 @@ function ModelList() {
         <thead>
           <tr>
             <th>Name</th>
-            <th>Picture URL</th>
             <th>Manufacturer</th>
           </tr>
         </thead>
@@ -35,16 +34,6 @@ function ModelList() {
           {models.map((model) => (
             <tr key={model.id}>
               <td>{model.name}</td>
-              <td>
-                <div className="model-image-hover">
-                  <a href={model.picture_url}>
-                    {model.picture_url}
-                  </a>
-                  <div className="model-image-popup">
-                    <img src={model.picture_url} alt={model.name} style={{ width: "100%" }} />
-                  </div>
-                </div>
-              </td>
               <td>{model.manufacturer.name}</td>
             </tr>
           ))}

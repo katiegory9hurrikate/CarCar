@@ -68,7 +68,7 @@ def api_automobile(request, vin):
             content = json.loads(request.body)
             auto = Automobile.objects.get(vin=vin)
 
-            props = ["color", "year", "sold"]
+            props = ["picture_url", "color", "year", "sold"]
             for prop in props:
                 if prop in content:
                     setattr(auto, prop, content[prop])
@@ -212,7 +212,7 @@ def api_vehicle_model(request, pk):
         try:
             content = json.loads(request.body)
             model = VehicleModel.objects.get(id=pk)
-            props = ["name", "picture_url"]
+            props = ["name"]
             for prop in props:
                 if prop in content:
                     setattr(model, prop, content[prop])

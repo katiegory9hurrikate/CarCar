@@ -27,13 +27,12 @@ function Nav() {
               <NavLink className="nav-link dropdown-toggle" to="/inventory">Inventory</NavLink>
               {activeDropdown === 'inventory' && (
                 <ul className="dropdown-menu show">
-                  <li><NavLink className="dropdown-item" to="/inventory">Automobiles</NavLink></li>
-                  <li><NavLink className="dropdown-item" to="/inventory/unsold">Unsold Automobiles</NavLink></li>
-                  <li><NavLink className="dropdown-item" to="/inventory/new">Create an Automobile</NavLink></li>
+                  <li><NavLink className="dropdown-item" to="/inventory">All Automobiles</NavLink></li>
+                  <li><NavLink className="dropdown-item" to="/inventory/new">Add Automobile</NavLink></li>
                   <li><hr className="dropdown-divider" /></li>
-                  <li><NavLink className="dropdown-item" to="/manufacturers">Manufacturers</NavLink></li>
+                  <li><NavLink className="dropdown-item" to="/manufacturers">All Manufacturers</NavLink></li>
                   <li><NavLink className="dropdown-item" to="/manufacturers/new">Create a Manufacturer</NavLink></li>
-                  <li><NavLink className="dropdown-item" to="/models">Models</NavLink></li>
+                  <li><NavLink className="dropdown-item" to="/models">All Models</NavLink></li>
                   <li><NavLink className="dropdown-item" to="/models/new">Create a Model</NavLink></li>
                 </ul>
               )}
@@ -45,14 +44,13 @@ function Nav() {
               {activeDropdown === 'sales' && (
                 <ul className="dropdown-menu show">
                   <li><NavLink className="dropdown-item" to="/sales">Sales History</NavLink></li>
-                  <li><NavLink className="dropdown-item" to="/sales/new">Create a Sale</NavLink></li>
-                  <li><NavLink className="dropdown-item" to="/inventory/unsold">Unsold Inventory</NavLink></li>
+                  <li><NavLink className="dropdown-item" to="/sales/new">New Sale</NavLink></li>
                   <li><hr className="dropdown-divider" /></li>
-                  <li><NavLink className="dropdown-item" to="/salespeople">Salespeople</NavLink></li>
-                  <li><NavLink className="dropdown-item" to="/salespeople/new">Create a Salesperson</NavLink></li>
+                  <li><NavLink className="dropdown-item" to="/salespeople">All Salespeople</NavLink></li>
+                  <li><NavLink className="dropdown-item" to="/salespeople/new">Add Salesperson</NavLink></li>
                   <li><NavLink className="dropdown-item" to="/salespeople/history">Salesperson History</NavLink></li>
-                  <li><NavLink className="dropdown-item" to="/customers">Customers</NavLink></li>
-                  <li><NavLink className="dropdown-item" to="/customers/new">Create a Customer</NavLink></li>
+                  <li><NavLink className="dropdown-item" to="/customers">All Customers</NavLink></li>
+                  <li><NavLink className="dropdown-item" to="/customers/new">Add Customer</NavLink></li>
                 </ul>
               )}
             </li>
@@ -62,12 +60,12 @@ function Nav() {
               <NavLink className="nav-link dropdown-toggle" to="/appointments">Service</NavLink>
               {activeDropdown === 'service' && (
                 <ul className="dropdown-menu show">
-                  <li><NavLink className="dropdown-item" to="/appointments">Service Appointments</NavLink></li>
-                  <li><NavLink className="dropdown-item" to="/appointments/new">Create a Service Appointment</NavLink></li>
+                  <li><NavLink className="dropdown-item" to="/appointments">All Appointments</NavLink></li>
+                  <li><NavLink className="dropdown-item" to="/appointments/new">Create Appointment</NavLink></li>
                   <li><NavLink className="dropdown-item" to="/appointments/history">Service History</NavLink></li>
                   <li><hr className="dropdown-divider" /></li>
-                  <li><NavLink className="dropdown-item" to="/technicians">Technicians</NavLink></li>
-                  <li><NavLink className="dropdown-item" to="/technicians/new">Add a Technician</NavLink></li>
+                  <li><NavLink className="dropdown-item" to="/technicians">All Technicians</NavLink></li>
+                  <li><NavLink className="dropdown-item" to="/technicians/new">Add Technician</NavLink></li>
                 </ul>
               )}
             </li>

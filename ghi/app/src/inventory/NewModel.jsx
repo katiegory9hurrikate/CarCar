@@ -1,11 +1,10 @@
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
 
-function ModelForm() {
+function ModelForm({ closeModal, isModal }) {
   const [models, setModels] = useState([]);
   const [manufacturers, setManufacturers] = useState([]);
   const [formData, setFormData] = useState({
     name: '',
-    picture_url: '',
     manufacturer_id: '',
   });
   const [error, setError] = useState(null);
@@ -14,7 +13,6 @@ function ModelForm() {
     try {
       const modelsUrl = 'http://localhost:8100/api/models/';
       const manufacturersUrl = 'http://localhost:8100/api/manufacturers/';
-
 
       const modelsResponse = await fetch(modelsUrl);
       if (modelsResponse.ok) {
@@ -60,9 +58,9 @@ function ModelForm() {
       if (response.ok) {
         setFormData({
           name: '',
-          picture_url: '',
           manufacturer_id: '',
         });
+        closeModal(); // Close the modal after a successful submission
       } else {
         throw new Error(`Error: ${response.status} ${response.statusText}`);
       }
@@ -82,12 +80,11 @@ function ModelForm() {
   };
 
   return (
-    <div className="row">
-      <div className="offset-3 col-6">
+    <div className={`container-fluid ${isModal ? '' : 'offset-3 col-6'}`}>
         <div className="shadow p-4 mt-4">
-          <h1>Create a New Model</h1>
+          <h1>Add New Model</h1>
           {error && <div className="alert alert-danger">{error}</div>}
-          <form onSubmit={handleSubmit} id="create-model-form">
+          <form onSubmit={handleSubmit}>
             <div className="form-floating mb-3">
               <input
                 onChange={handleFormChange}
@@ -100,19 +97,6 @@ function ModelForm() {
                 className="form-control"
               />
               <label htmlFor="name">Name</label>
-            </div>
-            <div className="form-floating mb-3">
-              <input
-                onChange={handleFormChange}
-                value={formData.picture_url}
-                placeholder="Picture URL"
-                required
-                type="text"
-                name="picture_url"
-                id="picture_url"
-                className="form-control"
-              />
-              <label htmlFor="picture_url">Picture URL</label>
             </div>
             <div className="form-floating mb-3">
               <select
@@ -135,7 +119,6 @@ function ModelForm() {
             <button className="btn btn-primary" style={{ color: '#198754', backgroundColor: '#ffffff', borderColor: '#198754' }}>Create</button>
           </form>
         </div>
-      </div>
     </div>
   );
 }

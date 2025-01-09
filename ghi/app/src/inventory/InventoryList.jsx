@@ -67,7 +67,7 @@ function AutomobileList() {
               <div key={auto.id} className="col-lg-3 col-md-4 col-sm-6 mb-4">
                 <div className="card">
                   <div className="card-img-container">
-                    <img src={auto.model.picture_url} className="card-img-top" alt={auto.model.name} />
+                    <img src={auto.picture_url} className="card-img-top" alt={auto.model.name} />
                   </div>
                   <div className="card-body">
                     <h5 className="card-title">{auto.model.name}</h5>
