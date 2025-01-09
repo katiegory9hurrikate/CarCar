@@ -8,7 +8,7 @@
 * Katie
 
 ## Pending updates:
-* Add/Update search/filter fields on
+#### Add/Update search/filter fields on
 - [ ] Customer List
 - [ ] Salesperson List
 - [ ] Salesperson History
@@ -16,21 +16,21 @@
 - [ ] Appointments List
 - [ ] Technician List
 - [ ] Sales History
-* Add "Create New" forms to
+#### Add "Create New" forms to
 - [ ] Customer List
 - [ ] Salesperson List
 - [ ] Appointments List
 - [ ] Technician List
 - [ ] Manufacturer List
 - [ ] Model List
-* Add CSV bulk upload to
+#### Add CSV bulk upload to
 - [ ] Inventory List
 - [ ] Customer List
 - [ ] Appointment List
 - [ ] Technician List
 - [ ] Salesperson List
 - [ ] Sales History
-* Add "Edit" & "Delete" options to
+#### Add "Edit" & "Delete" options to
 - [ ] Inventory items
 - [ ] Customers
 - [ ] Salespeople
@@ -39,10 +39,10 @@
 - [ ] Appointments
 - [ ] Models
 - [ ] Manufacturers
-* Add local state filters for color groups on inventory list - this will allow vehicles to be listed with their trademarked colors but still show up in searches based on the primary color group. Ex. "Plum Crazy Purple" would show up when a user selects "Purple" as a color filter and "Pink Pizzaz" would show up when a user selects "red" as the color group filter.
-* Add "Schedule Service" button to entries on the Customer List. This option will generate a modal pop-up with the New Appointment form and will auto-populate the customer's name into the Customer field.
 
+- [ ] Add local state filters for color groups on inventory list - this will allow vehicles to be listed with their trademarked colors but still show up in searches based on the primary color group. Ex. "Plum Crazy Purple" would show up when a user selects "Purple" as a color filter and "Pink Pizzaz" would show up when a user selects "red" as the color group filter.
 
+- [ ] Add "Schedule Service" button to entries on the Customer List. This option will generate a modal pop-up with the New Appointment form and will auto-populate the customer's name into the Customer field.
 
 ## How to Run this App
 
