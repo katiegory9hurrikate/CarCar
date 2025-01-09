@@ -69,6 +69,26 @@ function AutomobileForm() {
     fetchData();
   }, []);
 
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('.model-dropdown-container')) {
+        setShowModelDropdown(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event) => {
+      if (!event.target.closest('.manufacturer-dropdown-container')) {
+        setShowManufacturerDropdown(false);
+      }
+    };
+    document.addEventListener('mousedown', handleClickOutside);
+    return () => document.removeEventListener('mousedown', handleClickOutside);
+  }, []);
+
   const handleFormChange = (e) => {
     const { name, value } = e.target;
     setFormData(prev => ({
@@ -290,7 +310,7 @@ function AutomobileForm() {
             </div>
 
             {/* Model selection/creation */}
-            <div className="form-floating mb-3 position-relative">
+            <div className="form-floating mb-3 position-relative model-dropdown-container">
               <input
                 type="text"
                 value={modelSearchTerm}
@@ -332,7 +352,7 @@ function AutomobileForm() {
 
             {/* Manufacturer selection/creation */}
             {isAddingModel && (
-              <div className="form-floating mb-3 position-relative">
+              <div className="form-floating mb-3 position-relative manufacturer-dropdown-container">
                 <input
                   type="text"
                   value={manufacturerSearchTerm}
