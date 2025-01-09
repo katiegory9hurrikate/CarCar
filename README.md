@@ -40,9 +40,8 @@
 - [ ] Models
 - [ ] Manufacturers
 
-
+#### Other
 - [ ] Add local state filters for color groups on inventory list - this will allow vehicles to be listed with their trademarked colors but still show up in searches based on the primary color group. Ex. "Plum Crazy Purple" would show up when a user selects "Purple" as a color filter and "Pink Pizzaz" would show up when a user selects "red" as the color group filter.
-
 
 - [ ] Add "Schedule Service" button to entries on the Customer List. This option will generate a modal pop-up with the New Appointment form and will auto-populate the customer's name into the Customer field.
 
