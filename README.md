@@ -15,11 +15,13 @@ This project was initially called "CarCar" and was a class assignment. The origi
 <tr>
 <th>Add/Update search/filter fields</th>
 <th>Add "Create New" forms</th>
+<th>Add CSV bulk upload</th>
+<th>Add "Edit" & "Delete" options</th>
 </tr>
 <tr>
 <td>
 Customer List
-<br/>Salesperson List
+Salesperson List
 <br/>Salesperson History
 <br/>Service History
 <br/>Appointments List
@@ -34,17 +36,8 @@ Customer List
 <br/>Manufacturer List
 <br/>Model List
 </td>
-</tr>
-</table>
-
-<table>
-<tr>
-<th>Add CSV bulk upload</th>
-<th>Add "Edit" & "Delete" options</th>
-</tr>
-<tr>
 <td>
-<br/>Inventory List
+Inventory List
 <br/>Customer List
 <br/>Appointment List
 <br/>Technician List
@@ -52,7 +45,7 @@ Customer List
 <br/>Sales History
 </td>
 <td>
-<br/>Inventory items
+Inventory items
 <br/>Customers
 <br/>Salespeople
 <br/>Technicians
