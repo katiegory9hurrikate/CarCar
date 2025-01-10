@@ -269,7 +269,7 @@ Use http://localhost:5173/ to view any adjustments made to the files on the fron
         <td>List all Inventory</td>
     </tr>
     <tr>
-        <td>http://localhost:8100/api/automobiles/:vin/</td>
+        <td>http://localhost:8100/api/automobiles/:id/</td>
         <td>GET</td>
         <td>Show details for specific inventory item</td>
     </tr>
@@ -279,12 +279,12 @@ Use http://localhost:5173/ to view any adjustments made to the files on the fron
         <td>Create new inventory item</td>
     </tr>
     <tr>
-        <td>http://localhost:8100/api/automobiles/:vin/</td>
+        <td>http://localhost:8100/api/automobiles/:id/</td>
         <td>PUT</td>
         <td>Update a specific inventory item</td>
     </tr>
     <tr>
-        <td>http://localhost:8100/api/automobiles/:vin/</td>
+        <td>http://localhost:8100/api/automobiles/:id/</td>
         <td>DELETE</td>
         <td>Remove a specific inventory item</td>
     </tr>
