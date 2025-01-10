@@ -87,6 +87,146 @@ Inventory items
 - [ ] Familiarize yourself with the code. Use Insomnia (or similar) to test APIs. To view and test the front-end, navigate to http://localhost:5173/ using a web browser.
 (note: if the docker build doesn't work for some reason, close it down, delete/prune the containers, images, and volumes and try again. The ole turn it off and back on again trick is still relevant.)
 
+### Test Inventory
+<table>
+<tr>
+<th>VIN</th>
+<th>Color</th>
+<th>Year</th>
+<th>Picture URL</th>
+<th>Model</th>
+<th>Manufacturer</th>
+</tr>
+<tr>
+<td>1H2BZ5FB2AN120174</td>
+<td>Black</td>
+<td>1967</td>
+<td>https://i.imgur.com/4T9fW6w.png</td>
+<td>S800</td>
+<td>Honda</td>
+</tr>
+<tr>
+<td>1V2BZ5FB2AN119714</td>
+<td>Yellow</td>
+<td>1971</td>
+<td>https://i.imgur.com/1CBPjK9.jpeg </td>
+<td>Beetle</td>
+<td>Volkswagen</td>
+</tr>
+<tr>
+<td>1V2BZ5FB2AN119744</td>
+<td>Forest Green</td>
+<td>1974</td>
+<td>https://i.imgur.com/DKgkTU0.jpeg</td>
+<td>Thing</td>
+<td>Volkswagen</td>
+</tr>
+<tr>
+<td>1P2BZ5FB2AN119674</td>
+<td><Turquoise/td>
+<td>1967</td>
+<td>https://i.imgur.com/zRhiXru.png</td>
+<td><Firebird/td>
+<td>Pontiac</td>
+</tr>
+<tr>
+<td>1F2BZ5FB2AN119824</td>
+<td>Sky Blue</td>
+<td>1982</td>
+<td>https://i.imgur.com/oCinfqA.jpeg</td>
+<td>Bronco</td>
+<td>Ford</td>
+</tr>
+<tr>
+<td>1F2BZ5FB2AN119924</td>
+<td>T-Rex tax</td>
+<td>1992</td>
+<td>https://i.imgur.com/zS5UxwD.jpeg</td>
+<td>Wrangler YJ Sahara</td>
+<td>Jeep</td>
+</tr>
+<tr>
+<td>1D2BZ5FB2AN119714</td>
+<td>Plum Crazy Purple</td>
+<td>1971</td>
+<td>https://i.imgur.com/iGMv1oI.jpeg</td>
+<td>Challenger</td>
+<td>Dodge</td>
+</tr>
+<tr>
+<td>1C0RV3TT3CV414050</td>
+<td>Little Red</td>
+<td>1950</td>
+<td>https://i.imgur.com/INrywim.png</td>
+<td>Corvette</td>
+<td>Chevrolet</td>
+</tr>
+<tr>
+<td>1C2BZ5FB2AN120174</td>
+<td>Black</td>
+<td>1967</td>
+<td>https://i.imgur.com/JBV3t2Y.png</td>
+<td>Camaro</td>
+<td>Chevrolet</td>
+</tr>
+<tr>
+<td>1C2BZ5FB2AN119594</td>
+<td>Pink</td>
+<td>1959</td>
+<td>https://i.imgur.com/2FIlfvx.jpeg</td>
+<td>Eldorado Biarritz</td>
+<td>Cadillac</td>
+</tr>
+<tr>
+<td>1D2MP5DA2RT119704</td>
+<td>Lime Green</td>
+<td>1970</td>
+<td>https://i.imgur.com/N76nimO.jpeg</td>
+<td>Dart</td>
+<td>Dodge</td>
+</tr>
+<tr>
+<td>1C2OU5GA2RM119684</td>
+<td>Green</td>
+<td>1968</td>
+<td>https://i.imgur.com/5reIBpF.jpeg</td>
+<td>Cougar</td>
+<td>Mercury</td>
+</tr>
+<tr>
+<td>1P2OR5CH2EV119654</td>
+<td><Red/td>
+<td>1965</td>
+<td></td>
+<td>911</td>
+<td>Porche</td>
+</tr>
+<tr>
+<td>1P2AR5RO2WS119334</td>
+<td>Silver</td>
+<td>1933</td>
+<td>https://i.imgur.com/A7BmIkf.png</td>
+<td>Silver Arrow</td>
+<td>Pierce-Arrow</td>
+</tr>
+<tr>
+<td>1S2UP5RA2TY119954</td>
+<td>Orange</td>
+<td>1995</td>
+<td>https://i.imgur.com/tSOKEJb.png</td>
+<td>Supra</td>
+<td>Toyota</td>
+</tr>
+<tr>
+<td>1R2EB5EL2AM119704</td>
+<td>White</td>
+<td>1970</td>
+<td>https://i.imgur.com/X0JguSM.jpeg</td>
+<td>Rebel</td>
+<td>AMC</td>
+</tr>
+</table>
+
 
 ## Diagram
 <img src="readmediagram.png"/>
