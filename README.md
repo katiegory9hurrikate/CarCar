@@ -123,10 +123,10 @@ Inventory items
 </tr>
 <tr>
 <td>1P2BZ5FB2AN119674</td>
-<td><Turquoise/td>
+<td>Turquoise</td>
 <td>1967</td>
 <td>https://i.imgur.com/zRhiXru.png</td>
-<td><Firebird/td>
+<td>Firebird</td>
 <td>Pontiac</td>
 </tr>
 <tr>
@@ -195,9 +195,9 @@ Inventory items
 </tr>
 <tr>
 <td>1P2OR5CH2EV119654</td>
-<td><Red/td>
+<td>Red</td>
 <td>1965</td>
-<td></td>
+<td>https://i.imgur.com/FJbgFQX.jpeg</td>
 <td>911</td>
 <td>Porche</td>
 </tr>
