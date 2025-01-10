@@ -62,6 +62,23 @@ Inventory items
 
 - [ ] Add "Schedule Service" button to entries on the Customer List. This option will generate a modal pop-up with the New Appointment form and will auto-populate the customer's name into the Customer field.
 
+- [ ] add useState functions to forms throughout the site to auto-populate information into forms ie. customer name into service appointment form from customer list page, price and VIN into new sale form from inventory list/detail page (note: VIN already populates into new sale form), etc.
+
+- [ ] Create a detail view page for inventory items and add other descriptive fields to automobile API. Description fields won't be needed to create a new inventory item and can be edited after vehicle is published to inventory with basic descriptors and image. Detail page should including but not be limited to:
+    - [ ] Paragraph description
+    - [ ] Engine specs
+    - [ ] Interior color/material
+    - [ ] Odometer reading
+    - [ ] Convertable y/n
+    - [ ] Title Status
+    - [ ] Condition
+    - [ ] Price
+    - [ ] Transmission
+    - [ ] Photo gallery
+    - [ ] Sound System
+    - [ ] Additional Features (power brakes/steering, AC/Heat, Heated Seats, Power Windows, Seatbelts, non-standard Custom Features)
+
+
 
 
 ## How to Run this App
