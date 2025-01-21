@@ -21,6 +21,13 @@ function Sales() {
     setTotalSales(total);
   };
 
+  const formatCurrency = (value) => {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    }).format(value);
+  };
+
   useEffect(() => {
     getData();
   }, []);
@@ -51,7 +58,7 @@ function Sales() {
                     {sale.customer.first_name} {sale.customer.last_name}
                   </td>
                   <td>{sale.automobile.vin}</td>
-                  <td>${parseFloat(sale.price).toFixed(2)}</td>
+                  <td>{formatCurrency(parseFloat(sale.price))}</td>
                 </tr>
               );
             })}
@@ -60,7 +67,7 @@ function Sales() {
 
         {sales.length > 0 && (
           <div className="text-end">
-            <strong>Total Sales: <p>${totalSales.toFixed(2)}</p></strong>
+            <strong>Total Sales: <p>{formatCurrency(totalSales)}</p></strong>
           </div>
         )}
       </div>
