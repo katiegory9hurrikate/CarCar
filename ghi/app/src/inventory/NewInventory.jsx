@@ -380,13 +380,13 @@ function AutomobileForm() {
                   <ul className="list-group position-absolute w-100" style={{ zIndex: 1000, maxHeight: '200px', overflowY: 'auto' }}>
                     <li
                       className="list-group-item list-group-item-action custom-green-text"
-                      onClick={handleAddNewModel}
+                      onClick={handleAddNewManufacturer}
                       style={{
                         '--custom-green': '#198754',
                         color: 'var(--custom-green)'
                       }}
                     >
-                      + Add New Manufacturer
+                    + Add New Manufacturer
                     </li>
                     {manufacturers.map(manufacturer => (
                       <li
