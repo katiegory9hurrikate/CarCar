@@ -23,7 +23,7 @@ function AutomobileForm() {
   });
 
   const groupModelsByManufacturer = (modelsList) => {
-    return modelsList.reduce((grouped, model) => {
+    const grouped = modelsList.reduce((grouped, model) => {
       const manufacturerName = model.manufacturer.name;
       if (!grouped[manufacturerName]) {
         grouped[manufacturerName] = [];
@@ -31,6 +31,20 @@ function AutomobileForm() {
       grouped[manufacturerName].push(model);
       return grouped;
     }, {});
+
+    const sortedGrouped = {};
+
+    const sortedManufacturerNames = Object.keys(grouped).sort((a, b) =>
+      a.localeCompare(b)
+    );
+
+    sortedManufacturerNames.forEach(manufacturerName => {
+      sortedGrouped[manufacturerName] = grouped[manufacturerName].sort((a, b) =>
+        a.name.localeCompare(b.name)
+      );
+    });
+
+    return sortedGrouped;
   };
 
   useEffect(() => {
@@ -45,17 +59,12 @@ function AutomobileForm() {
           const modelsData = await modelsResponse.json();
           const manufacturersData = await manufacturersResponse.json();
 
-          // Sort manufacturers alphabetically
           const sortedManufacturers = (manufacturersData.manufacturers || [])
             .sort((a, b) => a.name.localeCompare(b.name));
 
-          // Sort models within each manufacturer group
-          const sortedModels = (modelsData.models || [])
-            .sort((a, b) => a.name.localeCompare(b.name));
+          const grouped = groupModelsByManufacturer(modelsData.models || []);
 
-          const grouped = groupModelsByManufacturer(sortedModels);
-
-          setModels(sortedModels);
+          setModels(modelsData.models || []);
           setGroupedModels(grouped);
           setFilteredGroupedModels(grouped);
           setManufacturers(sortedManufacturers);
@@ -112,7 +121,6 @@ function AutomobileForm() {
           model.name.toLowerCase().includes(value.toLowerCase())
         );
 
-        // Show models for the manufacturer as well
         if (manufacturer.toLowerCase().includes(value.toLowerCase()) || filteredModels.length > 0) {
           filtered[manufacturer] = filteredModels.length > 0 ? filteredModels : modelList;
         }
@@ -325,8 +333,12 @@ function AutomobileForm() {
               {showModelDropdown && !isAddingModel && (
                 <ul className="list-group position-absolute w-100" style={{ zIndex: 1000, maxHeight: '200px', overflowY: 'auto' }}>
                   <li
-                    className="list-group-item list-group-item-action text-primary"
+                    className="list-group-item list-group-item-action custom-green-text"
                     onClick={handleAddNewModel}
+                    style={{
+                      '--custom-green': '#198754',
+                      color: 'var(--custom-green)'
+                    }}
                   >
                     + Add New Model
                   </li>
@@ -367,8 +379,12 @@ function AutomobileForm() {
                 {showManufacturerDropdown && !isAddingManufacturer && (
                   <ul className="list-group position-absolute w-100" style={{ zIndex: 1000, maxHeight: '200px', overflowY: 'auto' }}>
                     <li
-                      className="list-group-item list-group-item-action text-primary"
-                      onClick={handleAddNewManufacturer}
+                      className="list-group-item list-group-item-action custom-green-text"
+                      onClick={handleAddNewModel}
+                      style={{
+                        '--custom-green': '#198754',
+                        color: 'var(--custom-green)'
+                      }}
                     >
                       + Add New Manufacturer
                     </li>
@@ -386,7 +402,7 @@ function AutomobileForm() {
               </div>
             )}
 
-            <button type="submit" className="btn btn-primary">
+            <button type="submit" className="btn btn-primary" style={{ color: '#198754', backgroundColor: '#ffffff', borderColor: '#198754' }}>
               Create Vehicle
             </button>
           </form>
