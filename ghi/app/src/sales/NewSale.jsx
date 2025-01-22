@@ -127,9 +127,10 @@ function SalesForm() {
     }
 
     if (inputName === "price" && isPriceAutoFilled) {
+      const newValue = value === "" ? "" : Number(value);
       setFormData({
         ...formData,
-        [inputName]: Number(value),
+        [inputName]: newValue,
       });
 
     } else {

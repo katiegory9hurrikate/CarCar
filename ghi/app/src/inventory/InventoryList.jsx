@@ -8,6 +8,11 @@ function AutomobileList() {
   const [error, setError] = useState(null);
   const [showUnsold, setShowUnsold] = useState(false);
 
+  // Track which field and which vehicle is being edited
+  const [editingField, setEditingField] = useState(null);
+  const [editingVehicleId, setEditingVehicleId] = useState(null);
+  const [newFieldValue, setNewFieldValue] = useState("");
+
   // Filters
   const [filters, setFilters] = useState({
     make: "",
@@ -82,6 +87,38 @@ function AutomobileList() {
         }
         return a.localeCompare(b);
       });
+  };
+
+  const handleEditField = (field, value, autoId) => {
+    setEditingField(field);
+    setEditingVehicleId(autoId);
+    setNewFieldValue(value);
+  };
+
+  const handleSaveField = async (autoId, field) => {
+    try {
+      const value = field === 'price' ? parseInt(newFieldValue, 10) : newFieldValue;
+      const response = await fetch(`http://localhost:8100/api/automobiles/${autoId}/`, {
+        method: 'PUT',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({ [field]: value }),
+      });
+
+      if (response.ok) {
+        const updatedAutos = autos.map((auto) =>
+          auto.id === autoId ? { ...auto, [field]: value } : auto
+        );
+        setAutos(updatedAutos);
+        setEditingField(null);
+        setEditingVehicleId(null);
+      } else {
+        throw new Error('Failed to update automobile');
+      }
+    } catch (error) {
+      console.error('Error updating automobile:', error);
+    }
   };
 
   if (loading) {
@@ -204,23 +241,131 @@ function AutomobileList() {
                   </div>
                   <div className="card-body">
                     <h5 className="card-title">{auto.model.name}</h5>
-                    <p className="card-text" style={{ marginBottom: "-3px" }}>
+                    <p className="card-text" style={{ marginBottom: "-2px" }}>
                       <strong>VIN:</strong> {auto.vin}
                     </p>
-                    <p className="card-text" style={{ marginBottom: "-3px" }}>
-                      <strong>Color:</strong> {auto.color}
-                    </p>
-                    <p className="card-text" style={{ marginBottom: "-3px" }}>
-                      <strong>Year:</strong> {auto.year}
-                    </p>
-                    <p className="card-text" style={{ marginBottom: "-3px" }}>
-                      <strong>Price:</strong> {formatCurrency(auto.price)}
-                    </p>
-                    <p className="card-text" style={{ marginBottom: "-3px" }}>
-                      <strong>Make:</strong> {auto.model.manufacturer.name}
+                    <div style={{ display: "flex", alignItems: "center", marginBottom: "-3px" }}>
+                      <strong>Color:</strong>&nbsp;
+                      {editingField === "color" && editingVehicleId === auto.id ? (
+                        <>
+                          <input
+                            type="text"
+                            value={newFieldValue}
+                            onChange={(e) => setNewFieldValue(e.target.value)}
+                            className="form-control form-control-sm"
+                          />
+                          <button
+                            onClick={() => handleSaveField(auto.id, "color")}
+                            style={{
+                              backgroundColor: "#198754",
+                              color: "#fff",
+                              border: "none",
+                              marginLeft: "10px",
+                            }}
+                          >
+                            Save
+                          </button>
+                        </>
+                      ) : (
+                        <>
+                          {auto.color}{" "}
+                          <button
+                            onClick={() => handleEditField("color", auto.color, auto.id)}
+                            style={{ border: "none", background: "none" }}
+                          >
+                            <img
+                              src="https://i.imgur.com/C4JUhyK.png"
+                              alt="Edit"
+                              style={{ width: "14px", height: "14px" }}
+                            />
+                          </button>
+                        </>
+                      )}
+                    </div>
+
+                    <div style={{ display: "flex", alignItems: "center", marginBottom: "-3px"  }}>
+                      <strong>Price:</strong>&nbsp;
+                      {editingField === "price" && editingVehicleId === auto.id ? (
+                        <>
+                          <input
+                            type="text"
+                            value={newFieldValue}
+                            onChange={(e) => setNewFieldValue(e.target.value)}
+                            className="form-control form-control-sm"
+                          />
+                          <button
+                            onClick={() => handleSaveField(auto.id, "price")}
+                            style={{
+                              backgroundColor: "#198754",
+                              color: "#fff",
+                              border: "none",
+                              marginLeft: "10px",
+                            }}
+                          >
+                            Save
+                          </button>
+                        </>
+                      ) : (
+                        <>
+                          {formatCurrency(auto.price)}{" "}
+                          <button
+                            onClick={() => handleEditField("price", auto.price, auto.id)}
+                            style={{ border: "none", background: "none" }}
+                          >
+                            <img
+                              src="https://i.imgur.com/C4JUhyK.png"
+                              alt="Edit"
+                              style={{ width: "14px", height: "14px" }}
+                            />
+                          </button>
+                        </>
+                      )}
+                    </div>
+
+                    <div style={{ display: "flex", alignItems: "center", marginBottom: "-2px"  }}>
+                      <strong>Year:</strong>&nbsp;
+                      {editingField === "year" && editingVehicleId === auto.id ? (
+                        <>
+                          <input
+                            type="text"
+                            value={newFieldValue}
+                            onChange={(e) => setNewFieldValue(e.target.value)}
+                            className="form-control form-control-sm"
+                          />
+                          <button
+                            onClick={() => handleSaveField(auto.id, "year")}
+                            style={{
+                              backgroundColor: "#198754",
+                              color: "#fff",
+                              border: "none",
+                              marginLeft: "10px",
+                            }}
+                          >
+                            Save
+                          </button>
+                        </>
+                      ) : (
+                        <>
+                          {auto.year}{" "}
+                          <button
+                            onClick={() => handleEditField("year", auto.year, auto.id)}
+                            style={{ border: "none", background: "none" }}
+                          >
+                            <img
+                              src="https://i.imgur.com/C4JUhyK.png"
+                              alt="Edit"
+                              style={{ width: "14px", height: "14px" }}
+                            />
+                          </button>
+                        </>
+                      )}
+                    </div>
+
+                    <p className="card-text" style={{ marginBottom: "-1px" }}>
+                      <strong>Make:</strong>&nbsp;{auto.model.manufacturer.name}
                     </p>
                     <p className="card-text">
-                      <strong>Sold:</strong> {auto.sold ? "Yes" : "No"}
+                      <strong>Sold:</strong>&nbsp;{auto.sold ? "Yes" : "No"}
                     </p>
                     {!auto.sold && (
                       <Link
