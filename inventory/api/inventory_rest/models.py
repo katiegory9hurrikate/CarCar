@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.core.validators import MaxValueValidator
 
 
 class Manufacturer(models.Model):
@@ -27,6 +28,10 @@ class Automobile(models.Model):
     color = models.CharField(max_length=50)
     year = models.PositiveSmallIntegerField()
     vin = models.CharField(max_length=17, unique=True)
+    price = models.IntegerField(
+        validators=[MaxValueValidator(9999999999)],
+        null=True,
+        blank=True)
     sold = models.BooleanField(default=False)
 
     model = models.ForeignKey(

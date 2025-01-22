@@ -3,6 +3,7 @@ import { useLocation } from "react-router-dom";
 
 function SalesForm() {
   const [isVinAutoFilled, setIsVinAutoFilled] = useState(false);
+  const [isPriceAutoFilled, setIsPriceAutoFilled] = useState(false);
   const [autos, setAutos] = useState([]);
   const [customers, setCustomers] = useState([]);
   const [salespersons, setSalespersons] = useState([]);
@@ -14,11 +15,21 @@ function SalesForm() {
   });
   const [errorMessage, setErrorMessage] = useState("");
 
+  // const formatCurrency = (value) => {
+  //   if (!value) return "";
+  //   return new Intl.NumberFormat("en-US", {
+  //     style: "currency",
+  //     currency: "USD",
+  //   }).format(value);
+  // };
+
   const location = useLocation();
 
   useEffect(() => {
     const query = new URLSearchParams(location.search);
     const vin = query.get("vin");
+    const price = query.get("price");
+    console.log("URL params:", { vin, price });
 
     if (vin) {
       setFormData((prevFormData) => ({
@@ -29,7 +40,18 @@ function SalesForm() {
     } else {
       setIsVinAutoFilled(false);
     }
+
+  if (price) {
+    setFormData((prevFormData) => ({
+      ...prevFormData,
+      price: price,
+    }));
+    setIsPriceAutoFilled(true);
+    } else {
+    setIsPriceAutoFilled(false);
+    }
   }, [location.search]);
+
 
   const getAutos = async () => {
     const url = "http://localhost:8100/api/automobiles/";
@@ -104,11 +126,12 @@ function SalesForm() {
       return;
     }
 
-    if (inputName === "price") {
+    if (inputName === "price" && isPriceAutoFilled) {
       setFormData({
         ...formData,
         [inputName]: Number(value),
       });
+
     } else {
       setFormData({
         ...formData,

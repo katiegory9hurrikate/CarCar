@@ -1,5 +1,4 @@
 from common.json import ModelEncoder
-
 from .models import Automobile, Manufacturer, VehicleModel
 
 
@@ -31,9 +30,17 @@ class AutomobileEncoder(ModelEncoder):
         "color",
         "year",
         "vin",
+        "price",
         "model",
         "sold",
     ]
     encoders = {
         "model": VehicleModelEncoder(),
     }
+
+    def default(self, obj):
+        if isinstance(obj, int):
+            return obj
+        elif obj is None:
+            return None
+        return super().default(obj)

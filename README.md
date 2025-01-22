@@ -78,7 +78,9 @@ Inventory items
     - Sound System
     - Additional Features (power brakes/steering, AC/Heat, Heated Seats, Power Windows, Seatbelts, non-standard Custom Features)
 
+- [ ] Create executable desktop icon that opens a browser window/web app
 
+- [ ] Ability for customer users to create accounts & bid on vehicles
 
 
 ## How to Run this App

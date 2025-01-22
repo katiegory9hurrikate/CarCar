@@ -22,6 +22,7 @@ function AutomobileList() {
       if (response.ok) {
         const data = await response.json();
         setAutos(data.autos);
+        console.log(data)
         setLoading(false);
       } else {
         throw new Error(
@@ -33,6 +34,13 @@ function AutomobileList() {
       setError("Oops! We forgot where we parked the cars!");
       setLoading(false);
     }
+  };
+
+  const formatCurrency = (value) => {
+    return new Intl.NumberFormat("en-US", {
+      style: "currency",
+      currency: "USD",
+    }).format(value);
   };
 
   useEffect(() => {
@@ -206,6 +214,9 @@ function AutomobileList() {
                       <strong>Year:</strong> {auto.year}
                     </p>
                     <p className="card-text" style={{ marginBottom: "-3px" }}>
+                      <strong>Price:</strong> {formatCurrency(auto.price)}
+                    </p>
+                    <p className="card-text" style={{ marginBottom: "-3px" }}>
                       <strong>Make:</strong> {auto.model.manufacturer.name}
                     </p>
                     <p className="card-text">
@@ -213,7 +224,7 @@ function AutomobileList() {
                     </p>
                     {!auto.sold && (
                       <Link
-                        to={`/sales/new?vin=${auto.vin}`}
+                        to={`/sales/new?vin=${auto.vin}&price=${auto.price}`}
                         className="btn"
                         style={{
                           color: "#198754",

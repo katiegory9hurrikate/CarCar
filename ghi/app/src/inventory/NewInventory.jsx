@@ -20,6 +20,7 @@ function AutomobileForm() {
     picture_url: '',
     color: '',
     year: '',
+    price: '',
   });
 
   const groupModelsByManufacturer = (modelsList) => {
@@ -237,6 +238,7 @@ function AutomobileForm() {
         picture_url: '',
         color: '',
         year: '',
+        price: '',
       });
       setModelSearchTerm('');
       setManufacturerSearchTerm('');
@@ -302,6 +304,20 @@ function AutomobileForm() {
                 required
               />
               <label htmlFor="year">Year</label>
+            </div>
+
+            <div className="form-floating mb-3">
+              <input
+                type="number"
+                name="price"
+                id="price"
+                value={formData.price}
+                onChange={handleFormChange}
+                className="form-control"
+                placeholder="Price"
+                required
+              />
+              <label htmlFor="price">Price</label>
             </div>
 
             <div className="form-floating mb-3">

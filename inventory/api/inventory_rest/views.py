@@ -14,9 +14,15 @@ from .models import Automobile, Manufacturer, VehicleModel
 def api_automobiles(request):
     if request.method == "GET":
         autos = Automobile.objects.all()
+
+        for auto in autos:
+            if auto.price is None:
+                auto.price = 0.0  # Default value or handle accordingly
+
         return JsonResponse(
             {"autos": autos},
             encoder=AutomobileEncoder,
+            safe=False
         )
     else:
         try:
@@ -63,12 +69,12 @@ def api_automobile(request, pk):
             )
         except Automobile.DoesNotExist:
             return JsonResponse({"message": "Does not exist"})
-    else: # PUT
+    else:  # PUT
         try:
             content = json.loads(request.body)
             auto = Automobile.objects.get(id=pk)
 
-            props = ["picture_url", "color", "year", "sold"]
+            props = ["picture_url", "color", "year", "price", "sold"]
             for prop in props:
                 if prop in content:
                     setattr(auto, prop, content[prop])
@@ -134,7 +140,7 @@ def api_manufacturer(request, pk):
             )
         except Manufacturer.DoesNotExist:
             return JsonResponse({"message": "Does not exist"})
-    else: # PUT
+    else:  # PUT
         try:
             content = json.loads(request.body)
             manufacturer = Manufacturer.objects.get(id=pk)
@@ -208,7 +214,7 @@ def api_vehicle_model(request, pk):
             )
         except VehicleModel.DoesNotExist:
             return JsonResponse({"message": "Does not exist"})
-    else: # PUT
+    else:  # PUT
         try:
             content = json.loads(request.body)
             model = VehicleModel.objects.get(id=pk)
