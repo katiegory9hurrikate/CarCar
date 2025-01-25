@@ -150,7 +150,7 @@ def api_list_sales(request):
                 )
                 automobile_vo.sold = True
                 automobile_vo.save()
-                inventory_url = f"http://inventory-api:8000/api/automobiles/{automobile_vo.vin}/"
+                inventory_url = f"http://inventory-api:8000/api/automobiles/{automobile_vo.pk}/"
                 requests.put(inventory_url, json={"sold": True})
 
             return JsonResponse(
@@ -208,7 +208,7 @@ def api_show_sale(request, pk):
                 automobile_vo = sale.automobile
                 automobile_vo.sold = False
                 automobile_vo.save()
-                inventory_url = f"http://inventory-api:8000/api/automobiles/{automobile_vo.vin}/"
+                inventory_url = f"http://inventory-api:8000/api/automobiles/{automobile_vo.pk}/"
                 requests.put(inventory_url, json={"sold": False})
 
                 sale.delete()

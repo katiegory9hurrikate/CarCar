@@ -115,6 +115,9 @@ function SalesForm() {
         customer: "",
         price: "",
       });
+    } else {
+      const errorData = await response.json();
+      setErrorMessage(errorData.error || "Failed to create sale");
     }
   };
 

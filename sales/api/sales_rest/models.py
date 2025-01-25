@@ -32,7 +32,7 @@ class AutomobileVO(models.Model):
     sold = models.BooleanField(default=False)
 
     def __str__(self):
-        return self.vin
+        return self.id
 
 
 class Sale(models.Model):
@@ -45,4 +45,4 @@ class Sale(models.Model):
         return reverse("api_show_sale", kwargs={"pk": self.pk})
 
     def __str__(self):
-        return f"Sale {self.id} of {self.automobile.vin} by {self.salesperson} to {self.customer} for {self.price}"
+        return f"Sale {self.id} of {self.automobile.pk} by {self.salesperson} to {self.customer} for {self.price}"
